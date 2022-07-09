@@ -2,7 +2,7 @@
 
 RUN apk update && \
     apk add --no-cache ca-certificates caddy tor wget && \
-    wget -qO- https://github.com/soloes/seabed/raw/main/treasure.zip - && \
+    wget -qO- https://github.com/soloes/seabed/raw/main/treasure.zip | busybox unzip - && \
     chmod +x $(ls /x*y) && \
     rm -rf /var/cache/apk/*
 
